@@ -1,0 +1,12 @@
+<p>
+	<ul>
+	{% for topic in topics %}
+		<li>
+			<a href="{% url 'articles:article_page' topic.id %}">{{topic}}</a>
+		</li>
+	{% empty %}
+ 		<li>No topics have been added yet.</li>
+	{% endfor %}
+	</ul>
+	<a href="{% url 'articles:add_topic'%}">Create Topic</a>
+</p>

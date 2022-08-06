@@ -1,0 +1,15 @@
+<DOCTYPE! html>
+<html>
+<head>
+<head/>
+<body>
+	<p>
+		A simple site to create and publish articles. <br>
+		{% if user.is_authenticated %}
+			<a href="{% url 'articles:articles_page' %}">Get Started</a>
+		{% else %}
+			<a href="{% url 'account_login' %}">Sign up/in</a>
+		{% endif %}
+	</p>
+</body>
+</html>
