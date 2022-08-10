@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+{% block content %} 
+
 <p>
 	<ul>
 	{% for topic in topics %}
@@ -8,5 +11,7 @@
  		<li>No topics have been added yet.</li>
 	{% endfor %}
 	</ul>
-	<a href="{% url 'articles:add_topic'%}">Create Topic</a>
+
+	<a class="btn btn-dark" href="{% url 'articles:add_topic'%}">Create Topic</a>
 </p>
+{% endblock content %}

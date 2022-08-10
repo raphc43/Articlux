@@ -17,4 +17,4 @@ class ArticleEntry(models.Model):
 	article = models.TextField(max_length=1000)
 
 	def __str__(self):
-		return f"{self.article[:70]}..."
+		return self.article

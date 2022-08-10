@@ -1,7 +1,13 @@
-<form method="POST">
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %} 
+
+
+<form class="form" method="POST">
 	{% csrf_token %}
 	<table>
-		{{form.as_table}}
+		{% bootstrap_form form %}
 	</table>
-	<input type='submit' value="Create Topic">
+	<input class="btn btn-primary" type='submit' value="Create Topic">
 </form>
+{% endblock content %}

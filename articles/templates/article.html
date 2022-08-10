@@ -1,6 +1,7 @@
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-</head>
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %} 
+
 <p>
 	<h2>{{topic}}</h2> 
 
@@ -10,11 +11,12 @@
 	{% if entry %}
 		{{entry}}
 	{% else %}
-		<form id="form" method="POST">
+		<form class="form" id="form" method="POST">
 			{% csrf_token %}
-			{{ form.as_p }}
-		<input type='submit' value="Publish Article">
+			{% bootstrap_form form %}
+		<input class="btn btn-primary" type='submit' value="Publish Article">
 		</form>
 	{% endif %}
 
 </p>
+{% endblock content %}
